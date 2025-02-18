@@ -1,7 +1,7 @@
 
 import { cn } from "@/lib/utils";
 
-interface BadgeProps {
+export interface BadgeProps {
   status: "pending" | "returned" | "delivered" | "failed" | "delayed";
   children: React.ReactNode;
 }
