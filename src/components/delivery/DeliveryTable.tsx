@@ -1,15 +1,16 @@
+
 import { TableHeader } from "./TableHeader";
 import { TableContent } from "./TableContent";
 import { TablePagination } from "./TablePagination";
 
 export const DeliveryTable = () => {
   return (
-    <div className="border border-[color:var(--Border-borderPrimary,#E4E4E7)] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] bg-white w-full mt-4 rounded-lg border-solid">
+    <div className="mt-6 rounded-lg border border-zinc-200 bg-white shadow-sm">
       <TableHeader />
-      <div className="w-full mt-2.5 px-5 py-2.5 rounded-lg">
-        <div className="text-black text-base font-semibold">
+      <div className="p-6">
+        <h2 className="mb-4 text-lg font-semibold text-black">
           Dernières livraisons
-        </div>
+        </h2>
         <TableContent />
         <TablePagination />
       </div>

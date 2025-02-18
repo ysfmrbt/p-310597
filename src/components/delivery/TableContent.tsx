@@ -1,5 +1,5 @@
 
-import { Badge } from "../ui/Badge";
+import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 
 const deliveries = [
@@ -70,109 +70,115 @@ const statusLabels = {
 
 export const TableContent = () => {
   return (
-    <div className="flex w-full items-stretch gap-[27px] justify-between flex-wrap mt-4">
-      {/* ID Column */}
-      <div className="text-sm text-black font-medium w-[119px]">
-        <div className="border-zinc-200 w-full font-semibold px-6 py-2.5 border-b">
-          Identifiant
-        </div>
-        {deliveries.map((delivery) => (
-          <div
-            key={delivery.id}
-            className="border-zinc-100 min-h-14 w-full px-6 py-[18px] border-b"
-          >
-            {delivery.id}
+    <div className="min-w-full overflow-x-auto">
+      <div className="inline-flex min-w-max gap-4">
+        {/* ID Column */}
+        <div className="w-32">
+          <div className="border-b border-zinc-200 py-3 px-4 font-semibold">
+            Identifiant
           </div>
-        ))}
-      </div>
-
-      {/* Order Column */}
-      <div className="text-sm text-black font-medium w-[125px]">
-        <div className="border-zinc-200 w-full font-semibold px-6 py-2.5 border-b">
-          Commande
+          {deliveries.map((delivery) => (
+            <div
+              key={delivery.id}
+              className="border-b border-zinc-100 py-4 px-4"
+            >
+              {delivery.id}
+            </div>
+          ))}
         </div>
-        {deliveries.map((delivery) => (
-          <div
-            key={delivery.id}
-            className="border-zinc-100 min-h-14 w-full px-6 py-[18px] border-b"
-          >
-            {delivery.order}
+
+        {/* Order Column */}
+        <div className="w-32">
+          <div className="border-b border-zinc-200 py-3 px-4 font-semibold">
+            Commande
           </div>
-        ))}
-      </div>
-
-      {/* Deliverer Column */}
-      <div className="min-w-60 w-[418px]">
-        <div className="border-zinc-200 w-full text-sm text-black font-semibold px-6 py-2.5 border-b">
-          Livreur
+          {deliveries.map((delivery) => (
+            <div
+              key={delivery.id}
+              className="border-b border-zinc-100 py-4 px-4"
+            >
+              {delivery.order}
+            </div>
+          ))}
         </div>
-        {deliveries.map((delivery) => (
-          <div
-            key={delivery.id}
-            className="border-zinc-100 flex min-h-14 w-full items-center gap-4 px-6 py-2 border-b"
-          >
-            <div className="flex items-center gap-2 text-base text-[#010101] font-medium text-center">
-              <div className="bg-zinc-900 text-white min-h-10 min-w-10 w-10 h-10 rounded-full flex items-center justify-center">
+
+        {/* Deliverer Column */}
+        <div className="w-[420px]">
+          <div className="border-b border-zinc-200 py-3 px-4 font-semibold">
+            Livreur
+          </div>
+          {deliveries.map((delivery) => (
+            <div
+              key={delivery.id}
+              className="flex items-center gap-4 border-b border-zinc-100 py-4 px-4"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white">
                 {delivery.deliverer.initials}
               </div>
+              <div className="flex flex-col gap-0.5">
+                <div className="font-semibold">{delivery.deliverer.email}</div>
+                <div className="text-sm text-zinc-600">
+                  {delivery.deliverer.contact}
+                </div>
+              </div>
             </div>
-            <div className="text-sm text-black leading-none flex-1">
-              <div className="font-semibold">{delivery.deliverer.email}</div>
-              <div className="font-medium">{delivery.deliverer.contact}</div>
+          ))}
+        </div>
+
+        {/* Status Column */}
+        <div className="w-32">
+          <div className="border-b border-zinc-200 py-3 px-4 font-semibold">
+            Status
+          </div>
+          {deliveries.map((delivery) => (
+            <div
+              key={delivery.id}
+              className="border-b border-zinc-100 py-4 px-4"
+            >
+              <Badge status={delivery.status}>
+                {statusLabels[delivery.status]}
+              </Badge>
             </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Status Column */}
-      <div className="text-xs font-medium w-[120px]">
-        <div className="border-zinc-200 w-full text-sm text-black font-semibold px-6 py-2.5 border-b">
-          Status
+          ))}
         </div>
-        {deliveries.map((delivery) => (
-          <div
-            key={delivery.id}
-            className="border-zinc-100 flex min-h-14 items-center px-6 py-4 border-b"
-          >
-            <Badge status={delivery.status}>
-              {statusLabels[delivery.status]}
-            </Badge>
-          </div>
-        ))}
-      </div>
 
-      {/* Date Column */}
-      <div className="text-sm text-black font-medium w-[138px]">
-        <div className="border-zinc-200 w-full font-semibold text-right px-6 py-2.5 border-b">
-          Date de livraison
+        {/* Date Column */}
+        <div className="w-40">
+          <div className="border-b border-zinc-200 py-3 px-4 font-semibold text-right">
+            Date de livraison
+          </div>
+          {deliveries.map((delivery) => (
+            <div
+              key={delivery.id}
+              className="border-b border-zinc-100 py-4 px-4 text-right"
+            >
+              {delivery.date}
+            </div>
+          ))}
         </div>
-        {deliveries.map((delivery) => (
-          <div
-            key={delivery.id}
-            className="border-zinc-100 min-h-14 w-full px-6 py-4 border-b"
-          >
-            {delivery.date}
-          </div>
-        ))}
-      </div>
 
-      {/* Actions Column */}
-      <div className="w-[68px]">
-        <div className="border-zinc-200 min-h-10 w-full py-2.5 border-b" />
-        {deliveries.map((delivery) => (
-          <div
-            key={delivery.id}
-            className="border-zinc-100 flex min-h-14 w-full items-center px-4 py-2.5 border-b"
-          >
-            <Button variant="ghost" size="icon" className="w-9 h-9">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets/0402bd11c8834084b3ec2981634a0a41/526a26d6a79e334f912bae1fafb9059dd67f73d2edc5336779cc04d2109d5a5f"
-                alt="Actions"
-                className="w-4 h-4"
-              />
-            </Button>
-          </div>
-        ))}
+        {/* Actions Column */}
+        <div className="w-16">
+          <div className="border-b border-zinc-200 py-3" />
+          {deliveries.map((delivery) => (
+            <div
+              key={delivery.id}
+              className="flex items-center justify-center border-b border-zinc-100 py-4"
+            >
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-8 w-8 rounded-full hover:bg-zinc-100"
+              >
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets/0402bd11c8834084b3ec2981634a0a41/526a26d6a79e334f912bae1fafb9059dd67f73d2edc5336779cc04d2109d5a5f"
+                  alt="Actions"
+                  className="h-4 w-4"
+                />
+              </Button>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
