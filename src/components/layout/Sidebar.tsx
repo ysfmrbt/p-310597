@@ -5,8 +5,8 @@ import { SidebarFooter } from "./SidebarFooter";
 
 export const Sidebar = () => {
   return (
-    <aside className="flex h-screen w-72 flex-col justify-between border-r border-zinc-200 bg-white">
-      <div>
+    <aside className="sticky top-0 flex h-screen min-w-[280px] flex-col justify-between border-r border-zinc-200 bg-white">
+      <div className="flex-1 overflow-y-auto">
         <SidebarHeader />
         <SidebarNavigation />
       </div>
