@@ -7,18 +7,18 @@ export interface BadgeProps {
 }
 
 const statusStyles = {
-  pending: "bg-yellow-100 text-[#010000]",
-  returned: "bg-cyan-100 text-[#000001]",
-  delivered: "bg-emerald-100 text-black",
-  failed: "bg-red-100 text-[#010000]",
-  delayed: "bg-fuchsia-100 text-[#010001]",
+  pending: "bg-yellow-100 text-zinc-900 border border-yellow-200",
+  returned: "bg-cyan-100 text-zinc-900 border border-cyan-200",
+  delivered: "bg-emerald-100 text-zinc-900 border border-emerald-200",
+  failed: "bg-red-100 text-zinc-900 border border-red-200",
+  delayed: "bg-fuchsia-100 text-zinc-900 border border-fuchsia-200",
 };
 
 export const Badge = ({ status, children }: BadgeProps) => {
   return (
     <div
       className={cn(
-        "px-1.5 py-1 rounded-md text-xs font-medium",
+        "px-2.5 py-1 rounded-md text-xs font-medium inline-block",
         statusStyles[status],
       )}
     >
