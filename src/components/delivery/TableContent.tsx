@@ -1,6 +1,6 @@
 
-import { Badge } from "../ui/badge";
-import { Button } from "../ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 const deliveries = [
   {
@@ -67,6 +67,14 @@ const statusLabels = {
   failed: "Echec",
   delayed: "Retardée",
 };
+
+const statusVariants = {
+  pending: "outline",
+  returned: "secondary",
+  delivered: "default",
+  failed: "destructive",
+  delayed: "outline",
+} as const;
 
 export const TableContent = () => {
   return (
@@ -135,7 +143,7 @@ export const TableContent = () => {
               key={delivery.id}
               className="border-b border-zinc-100 py-4 px-4"
             >
-              <Badge status={delivery.status}>
+              <Badge variant={statusVariants[delivery.status]}>
                 {statusLabels[delivery.status]}
               </Badge>
             </div>
