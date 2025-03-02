@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -14,15 +15,15 @@ const footerItems = [
 
 export const SidebarFooter = () => {
   return (
-    <div className="flex w-full flex-col items-stretch justify-center">
-      <div className="flex w-full flex-col items-stretch justify-center p-4">
+    <div className="flex w-full flex-col">
+      <div className="px-4 py-2">
         {footerItems.map((item) => (
           <Button
             key={item.label}
             variant="ghost"
-            className="flex w-full items-center gap-3 p-2 rounded-lg"
+            className="flex w-full items-center justify-start gap-3 px-4 py-2 mb-1 rounded-lg"
           >
-            <div className="flex items-center gap-2 w-5">
+            <div className="flex items-center justify-center w-5 h-5">
               <img src={item.icon} alt="" className="w-5 h-5" />
             </div>
             <span className="text-sm font-medium text-black">{item.label}</span>
@@ -33,7 +34,7 @@ export const SidebarFooter = () => {
       <div className="p-4">
         <Button
           variant="ghost"
-          className="flex w-full items-center gap-3 justify-between p-2 rounded-lg"
+          className="flex w-full items-center justify-between px-4 py-2 rounded-lg"
         >
           <div className="flex items-center gap-3">
             <img

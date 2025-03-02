@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 const navigationItems = [
@@ -38,21 +39,21 @@ const navigationItems = [
 
 export const SidebarNavigation = () => {
   return (
-    <nav className="flex w-full flex-col items-stretch justify-center mt-2 p-4">
+    <nav className="flex flex-col px-4 py-2">
       {navigationItems.map((item) => (
         <Button
           key={item.label}
           variant="ghost"
-          className={`flex w-full max-w-56 items-center gap-3 p-2 rounded-lg relative ${
+          className={`flex w-full items-center justify-start gap-3 px-4 py-2 mb-1 rounded-lg relative ${
             item.active ? "bg-blue-50" : ""
           }`}
         >
-          <div className="flex items-center gap-2 w-5">
+          <div className="flex items-center justify-center w-5 h-5">
             <img src={item.icon} alt="" className="w-5 h-5" />
           </div>
           <span className="text-sm font-medium text-black">{item.label}</span>
           {item.active && (
-            <div className="bg-blue-700 absolute flex w-0.5 h-5 -left-4 rounded-full" />
+            <div className="bg-blue-700 absolute flex w-0.5 h-5 left-0 rounded-full" />
           )}
         </Button>
       ))}
