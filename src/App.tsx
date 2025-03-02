@@ -10,7 +10,6 @@ import Inbox from "./pages/Inbox";
 import Notifications from "./pages/Notifications";
 import Dashboard from "./pages/Dashboard";
 import Orders from "./pages/Orders";
-import Delivery from "./pages/Delivery";
 import Customers from "./pages/Customers";
 import Products from "./pages/Products";
 import Discounts from "./pages/Discounts";
@@ -29,7 +28,6 @@ const App = () => (
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
-          <Route path="/delivery" element={<Delivery />} />
           <Route path="/customers" element={<Customers />} />
           <Route path="/products" element={<Products />} />
           <Route path="/discounts" element={<Discounts />} />

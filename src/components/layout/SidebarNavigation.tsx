@@ -24,11 +24,6 @@ const navigationItems = [
     path: "/orders"
   },
   {
-    icon: "https://cdn.builder.io/api/v1/image/assets/0402bd11c8834084b3ec2981634a0a41/4898d3ac6294aadd08bb26147641b387707a4f9ef2d8906586500897b04419f5",
-    label: "Livraison",
-    path: "/delivery"
-  },
-  {
     icon: "https://cdn.builder.io/api/v1/image/assets/0402bd11c8834084b3ec2981634a0a41/4429faf67ef9aa145caf6c311927475d4664d35c063bd2649d901cdf69d3efee",
     label: "Clients",
     path: "/customers"
