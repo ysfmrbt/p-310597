@@ -1,4 +1,5 @@
-import { Badge } from "../ui/Badge";
+
+import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 
 const deliveries = [
