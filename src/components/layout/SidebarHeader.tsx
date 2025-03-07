@@ -10,9 +10,9 @@ export const SidebarHeader = () => {
       >
         <div className="flex items-center gap-3">
           <div className="flex items-center justify-center w-6 h-6">
-            <div className="bg-slate-400 border-zinc-200 border flex h-6 w-6 rounded-full border-solid" />
+            <div className="bg-primary border-gray-200 border flex h-6 w-6 rounded-full border-solid" />
           </div>
-          <span className="text-black text-sm font-semibold">Carré Blanc</span>
+          <span className="text-gray-800 text-sm font-semibold">Carré Blanc</span>
         </div>
         <img
           src="https://cdn.builder.io/api/v1/image/assets/0402bd11c8834084b3ec2981634a0a41/65bc4127e22ecf66a22375c0df50168169c67db38c103dca571c4c0baa2a8fd9"

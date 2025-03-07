@@ -55,16 +55,16 @@ export const SidebarNavigation = () => {
           key={item.label}
           variant="ghost"
           className={`flex w-full items-center justify-start gap-3 px-4 py-2 mb-1 rounded-lg relative ${
-            location.pathname === item.path ? "bg-blue-50" : ""
+            location.pathname === item.path ? "bg-gray-100 text-primary" : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
           }`}
           onClick={() => handleNavigation(item.path)}
         >
           <div className="flex items-center justify-center w-5 h-5">
             <img src={item.icon} alt="" className="w-5 h-5" />
           </div>
-          <span className="text-sm font-medium text-black">{item.label}</span>
+          <span className="text-sm font-medium">{item.label}</span>
           {location.pathname === item.path && (
-            <div className="bg-blue-700 absolute flex w-0.5 h-5 left-0 rounded-full" />
+            <div className="bg-primary absolute flex w-1 h-6 left-0 rounded-r-md" />
           )}
         </Button>
       ))}

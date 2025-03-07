@@ -21,16 +21,16 @@ export const SidebarFooter = () => {
           <Button
             key={item.label}
             variant="ghost"
-            className="flex w-full items-center justify-start gap-3 px-4 py-2 mb-1 rounded-lg"
+            className="flex w-full items-center justify-start gap-3 px-4 py-2 mb-1 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-100"
           >
             <div className="flex items-center justify-center w-5 h-5">
               <img src={item.icon} alt="" className="w-5 h-5" />
             </div>
-            <span className="text-sm font-medium text-black">{item.label}</span>
+            <span className="text-sm font-medium">{item.label}</span>
           </Button>
         ))}
       </div>
-      <Separator className="my-2" />
+      <Separator className="my-2 bg-gray-200" />
       <div className="p-4">
         <Button
           variant="ghost"
@@ -43,8 +43,8 @@ export const SidebarFooter = () => {
               className="w-10 h-10 rounded-md"
             />
             <div className="flex flex-col">
-              <span className="text-sm font-medium text-black">Erica</span>
-              <span className="text-xs font-medium text-black">
+              <span className="text-sm font-medium text-gray-900">Erica</span>
+              <span className="text-xs font-medium text-gray-600">
                 erica@example.com
               </span>
             </div>

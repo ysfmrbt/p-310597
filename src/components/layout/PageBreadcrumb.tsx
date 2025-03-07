@@ -20,22 +20,22 @@ export const PageBreadcrumb = () => {
     : "Dashboard";
 
   return (
-    <div className="mb-6 bg-white rounded-lg p-3 flex items-center justify-between shadow-sm">
+    <div className="mb-6 bg-white rounded-lg p-3 flex items-center justify-between shadow-sm border border-gray-100">
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
-            <BreadcrumbLink href="/" className="flex items-center gap-1">
+            <BreadcrumbLink href="/" className="flex items-center gap-1 text-gray-600">
               <Home className="h-4 w-4" />
               <span>Accueil</span>
             </BreadcrumbLink>
           </BreadcrumbItem>
           <BreadcrumbSeparator />
           <BreadcrumbItem>
-            <BreadcrumbPage>{pageTitle}</BreadcrumbPage>
+            <BreadcrumbPage className="text-gray-900 font-medium">{pageTitle}</BreadcrumbPage>
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <span className="text-sm font-medium text-zinc-500">{new Date().toLocaleDateString('fr-FR')}</span>
+      <span className="text-sm font-medium text-gray-500">{new Date().toLocaleDateString('fr-FR')}</span>
     </div>
   );
 };
